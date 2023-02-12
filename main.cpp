@@ -26,7 +26,7 @@ int filtro = 4;
 GLint modo = GL_MODULATE;
 
 // Define modo de desenho inicial: textura
-char modo_des = 't';
+char modo_des = 's';
 
 void SetaEscalaTextura(float x,float y)
 {
@@ -47,6 +47,7 @@ GLfloat z_ej = 50, z_dj = -50;
 
 // Variaveis para controle da porta
 #define ANGLE_DOOR_MAX 71
+#define ANGLE_DOOR_MIN 0
 #define X_LIM_DOOR 55
 #define Z_LIM_DOOR -55
 #define XY_ONE_ANGLE 0.616666666
@@ -542,8 +543,8 @@ void Teclado(unsigned char key, int x, int y)
 						z_trans_angle = z_trans_angle - 0.6;
 					}
 					break;
-		case 'm':	
-					if(angle_door > 0){
+    case 'N':	
+					if(angle_door > ANGLE_DOOR_MIN){
 						angle_door = angle_door - 1;
 						x_trans_angle = x_trans_angle - 0.5;
 						z_trans_angle = z_trans_angle + 0.6;
@@ -553,19 +554,18 @@ void Teclado(unsigned char key, int x, int y)
 					if(z_ej > Z_LIM_DJ){
 						z_ej = z_ej - 1;
 					}
-
 					break;
-		case 'u':	
+		case 'Y':	
 					if(z_ej < Z_LIM_EJ){
 						z_ej = z_ej + 1; 
 					}
 					break;
-		case 'h':
+		case 'U':
 					if(z_dj < Z_LIM_EJ){
 						z_dj = z_dj + 1;
 					}
 					break;		
-		case 'j':
+		case 'U':
 					if(z_dj > Z_LIM_DJ){
 						z_dj = z_dj - 1; 
 					}
@@ -805,7 +805,7 @@ int main(int argc, char** argv)
 	glutInitWindowSize(1700,900);
 
 	// Cria a janela passando como argumento o titulo da mesma
-	glutCreateWindow("John's bedroom");
+	glutCreateWindow("Quarto");
 
 	// Registra a funcao callback de redesenho da janela de visualizacao
 	glutDisplayFunc(Desenha);

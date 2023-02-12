@@ -17,7 +17,7 @@
 - Instale o pacote Miscellaneous Mesa GL utilities
 - Instale as bibliotecas X11 miscellaneous utility library e X11 Input extension library
 - Instale a GLFW3 (OpenGL Framework Window) 
--Instale a biblioteca **ljpeg** para codificação e decodificação de imagens JPEG
+- Instale a biblioteca **ljpeg** para codificação e decodificação de imagens JPEG
 
 ## Codigo de compilação e execução
 - Compile o codigo 
