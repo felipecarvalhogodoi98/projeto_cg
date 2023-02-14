@@ -2,6 +2,7 @@
 #include <string.h>
 #include <vector>
 #include "bibutilNoTex.h"
+#include <iostream>
 
 #define DEBUG
 
@@ -491,14 +492,12 @@ void DesenhaObjetoNoTex(OBJnotex *obj)
 
 	
 	ult_texid = -1;
-	
 	for(i=0; i<obj->numFaces; i++)
 	{
 		
 		if(!obj->normais_por_vertice)
 			glNormal3f(obj->normais[i].x,obj->normais[i].y,obj->normais[i].z);
 
-		
 		if(obj->faces[i].mat != -1)
 		{
 			
@@ -541,10 +540,6 @@ void DesenhaObjetoNoTex(OBJnotex *obj)
 				glNormal3f(obj->normais[obj->faces[i].norm[vf]].x,
 				obj->normais[obj->faces[i].norm[vf]].y,
 				obj->normais[obj->faces[i].norm[vf]].z);
-
-			if(texid!=-1)
-				glTexCoord2f(obj->texcoords[obj->faces[i].tex[vf]].s,
-				obj->texcoords[obj->faces[i].tex[vf]].t);
 
 			glVertex3f(obj->vertices[obj->faces[i].vert[vf]].x,
 		    	obj->vertices[obj->faces[i].vert[vf]].y,

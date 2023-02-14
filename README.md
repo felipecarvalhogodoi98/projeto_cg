@@ -13,7 +13,7 @@
 - A fazer
 
 ## Requisitos para executar o projeto
-- Instale a OpenGL Utility Toolkit (GLUT) p
+- Instale a OpenGL Utility Toolkit (GLUT)
 - Instale o pacote Miscellaneous Mesa GL utilities
 - Instale as bibliotecas X11 miscellaneous utility library e X11 Input extension library
 - Instale a GLFW3 (OpenGL Framework Window) 

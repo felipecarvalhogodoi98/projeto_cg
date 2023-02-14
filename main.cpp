@@ -26,7 +26,7 @@ int filtro = 4;
 GLint modo = GL_MODULATE;
 
 // Define modo de desenho inicial: textura
-char modo_des = 's';
+char modo_des = 't';
 
 void SetaEscalaTextura(float x,float y)
 {
@@ -61,7 +61,7 @@ GLfloat sentido = 1;
 OBJ *plano, *mesa, *cadeira, *quadro, *porta, *janela, *lamp,
  *cabeceira, *quadrop, *luminaria, *computador, *armario, *telaComp, *telaLousa;
 
-OBJnotex *ventilador, *cama, *helice;
+OBJnotex *ventilador, *cama, *helice, *espelhoMoldura;
 
 // Luminosidade base de uma lampada
 #define LOW	0.3
@@ -389,6 +389,14 @@ void DesenhaObjExtra(){
 	DesenhaObjeto(armario);
 	glPopMatrix();
 
+  // moldura espelho
+	glPushMatrix();
+	glTranslatef(-150,110,-395);
+	glRotatef(90,0,0,1);
+  glScalef(0.5,0.5,0.5);
+	espelhoMoldura->textura = madeiraArmario->texid;
+	DesenhaObjetoNoTex(espelhoMoldura);
+	glPopMatrix();
 }
 
 // Desenha o chao
@@ -560,7 +568,7 @@ void Teclado(unsigned char key, int x, int y)
 						z_ej = z_ej + 1; 
 					}
 					break;
-		case 'U':
+		case 'u':
 					if(z_dj < Z_LIM_EJ){
 						z_dj = z_dj + 1;
 					}
@@ -781,7 +789,8 @@ void Inicializa(void)
 	luminaria = CarregaObjeto("obj/luminaria.obj", false);
 	computador = CarregaObjeto("obj/computador.obj", false);
 	armario = CarregaObjeto("obj/armario.obj", false);
-	helice = CarregaObjetoNoTex("obj/helice.obj", false);
+	espelhoMoldura = CarregaObjetoNoTex("obj/espelho-moldura.obj", false);
+  helice = CarregaObjetoNoTex("obj/helice.obj", false);
 
 	SetaLuzes();
 	SetaModoDesenho(modo_des);
