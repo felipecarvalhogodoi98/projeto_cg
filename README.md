@@ -10,7 +10,22 @@
 - Ana Paula Piovesan Melchiori
 
 ## Requisitos do projeto
-- A fazer
+- [ ] Quarto
+  - [x] Parede, Chão, Teto
+  - [x] Porta, Janela 
+- [ ] Objetos
+  - [ ] Cama, tapete, mesa, quadros, entre outros
+- [ ] Objetos dinamicos
+  - [ ] Usam algum tipo de animacão
+- [ ] Ambiente
+  - [ ] Iluminacão
+  - [ ] Animacão de objetos
+- [ ] Navegacão
+  - [ ] Mouse, teclado
+  - [ ] Colisão
+  - [ ] Fisica(gravidade)
+  - [ ] Selecão de objetos
+
 
 ## Requisitos para executar o projeto
 - Instale a OpenGL Utility Toolkit (GLUT)
