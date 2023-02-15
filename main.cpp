@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
 #include <GL/glut.h>
 #include <math.h>
 #include "bibutilNoTex.h"

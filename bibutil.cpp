@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
 #include <math.h>
 #include <string.h>
 #include <vector>
