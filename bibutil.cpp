@@ -4,6 +4,7 @@
 #include <string.h>
 #include <vector>
 #include "bibutil.h"
+#include <iostream>
 
 #define DEBUG
 
@@ -314,7 +315,6 @@ OBJ *CarregaObjeto(char *nomeArquivo, bool mipmap)
 	float minx,miny,minz;
 	float maxx,maxy,maxz;
 
-	
 	while(!feof(fp))
 	{
 		fgets(aux,255,fp);
@@ -474,9 +474,10 @@ void DesenhaObjeto(OBJ *obj)
 	ult_texid = -1;
 	for(i=0; i<obj->numFaces; i++)
 	{
-
-		if(!obj->normais_por_vertice)
-			glNormal3f(obj->normais[i].x,obj->normais[i].y,obj->normais[i].z);
+		if(!obj->normais_por_vertice){
+      glNormal3f(obj->normais[i].x,obj->normais[i].y,obj->normais[i].z);
+    }
+			
 
 		if(obj->faces[i].mat != -1)
 		{
@@ -508,16 +509,21 @@ void DesenhaObjeto(OBJ *obj)
 		}
 
 		glBegin(prim);
+    
 		for(int vf=0; vf<obj->faces[i].nv;++vf)
 		{
-			if(obj->normais_por_vertice)
-				glNormal3f(obj->normais[obj->faces[i].norm[vf]].x,
+			if(obj->normais_por_vertice){
+        glNormal3f(obj->normais[obj->faces[i].norm[vf]].x,
 				obj->normais[obj->faces[i].norm[vf]].y,
 				obj->normais[obj->faces[i].norm[vf]].z);
+      }
+				
 
-			if(texid!=-1)
-				glTexCoord2f(obj->texcoords[obj->faces[i].tex[vf]].s,
-				obj->texcoords[obj->faces[i].tex[vf]].t);
+			if(texid!=-1){
+        glTexCoord2f(obj->texcoords[obj->faces[i].tex[vf]].s,
+				  obj->texcoords[obj->faces[i].tex[vf]].t);
+      }
+				
 			glVertex3f(obj->vertices[obj->faces[i].vert[vf]].x,
 		    	obj->vertices[obj->faces[i].vert[vf]].y,
 			obj->vertices[obj->faces[i].vert[vf]].z);

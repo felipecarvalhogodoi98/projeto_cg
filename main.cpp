@@ -7,12 +7,14 @@
 #include <vector>
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
 
 using namespace std;
 
 // Define as texturas 2D
 TEX *parede, *chao, *teto, *pintura, *lousa, *monitor, *janelaE,
- *janelaD, *madeiraArmario, *lencol, *ventiladorTex, *heliceTex, *luminariaTex;
+ *janelaD, *madeiraArmario, *lencol, *ventiladorTex, *heliceTex, *luminariaTex,
+ *tapeteTex;
 
 // Filtros de textura
 GLint filtros[] = {
@@ -63,7 +65,7 @@ GLfloat sentido = 1;
 OBJ *plano, *mesa, *cadeira, *quadro, *porta, *janela, *lamp,
  *cabeceira, *quadrop, *luminaria, *computador, *armario, *telaComp, *telaLousa;
 
-OBJnotex *ventilador, *cama, *helice, *espelhoMoldura;
+OBJnotex *ventilador, *cama, *helice, *espelhoMoldura, *tapete;
 
 // Luminosidade base de uma lampada
 #define LOW	0.3
@@ -399,6 +401,15 @@ void DesenhaObjExtra(){
 	espelhoMoldura->textura = madeiraArmario->texid;
 	DesenhaObjetoNoTex(espelhoMoldura);
 	glPopMatrix();
+
+  // cout << "tapete" << endl;
+  // espelho
+	glPushMatrix();
+	glTranslatef(150,6,-420);
+	glRotatef(90,1,0,0);
+  glScalef(0.7,0.7,0.7);
+	DesenhaObjetoNoTex(tapete);
+	glPopMatrix();
 }
 
 // Desenha o chao
@@ -727,6 +738,7 @@ void Inicializa(void)
 	heliceTex = CarregaTextura("texturas/helice.jpg", true);
 	ventiladorTex = CarregaTextura("texturas/ventilador.jpg", true);
 	luminariaTex = CarregaTextura("texturas/luminaria.jpg", true);
+  tapeteTex = CarregaTextura("texturas/tapete.jpg", true);
 
 	// Seleciona o modo de aplicacao da textura
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, modo);
@@ -792,6 +804,7 @@ void Inicializa(void)
 	computador = CarregaObjeto("obj/computador.obj", false);
 	armario = CarregaObjeto("obj/armario.obj", false);
 	espelhoMoldura = CarregaObjetoNoTex("obj/espelho-moldura.obj", false);
+  tapete = CarregaObjetoNoTex("obj/tapete.obj", false);
   helice = CarregaObjetoNoTex("obj/helice.obj", false);
 
 	SetaLuzes();

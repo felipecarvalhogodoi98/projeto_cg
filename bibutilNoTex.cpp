@@ -496,13 +496,15 @@ void DesenhaObjetoNoTex(OBJnotex *obj)
 	ult_texid = -1;
 	for(i=0; i<obj->numFaces; i++)
 	{
-		
-		if(!obj->normais_por_vertice)
-			glNormal3f(obj->normais[i].x,obj->normais[i].y,obj->normais[i].z);
+    
+
+		if(!obj->normais_por_vertice){
+			// glNormal3f(obj->normais[i].x,obj->normais[i].y,obj->normais[i].z);
+    }
 
 		if(obj->faces[i].mat != -1)
 		{
-			
+
 			int mat = obj->faces[i].mat;
 			glMaterialfv(GL_FRONT,GL_AMBIENT,_materiaisNoTex[mat]->ka);
 			
@@ -516,7 +518,7 @@ void DesenhaObjetoNoTex(OBJnotex *obj)
 			glMaterialf(GL_FRONT,GL_SHININESS,_materiaisNoTex[mat]->spec);
 		}
 
-		
+
 		if(obj->textura != -1)
 			texid = obj->textura;
 		else
@@ -537,7 +539,6 @@ void DesenhaObjetoNoTex(OBJnotex *obj)
 
 		for(int vf=0; vf<obj->faces[i].nv;++vf)
 		{
-
 			if(obj->normais_por_vertice)
 				glNormal3f(obj->normais[obj->faces[i].norm[vf]].x,
 				obj->normais[obj->faces[i].norm[vf]].y,
