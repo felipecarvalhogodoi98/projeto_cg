@@ -729,7 +729,7 @@ void Inicializa(void)
 	parede = CarregaTextura("texturas/parede.jpg",true);
 	chao   = CarregaTextura("texturas/chao.jpg",true);
 	teto   = CarregaTextura("texturas/teto.jpg",true);
-	pintura = CarregaTextura("texturas/gogh.jpg", true);
+	pintura = CarregaTextura("texturas/freira.jpg", true);
 	lousa = CarregaTextura("texturas/calculosLousa.jpg", true);
 	monitor = CarregaTextura("texturas/monitor.jpg", true);
 	janelaE = CarregaTextura("texturas/janelaE.jpg", true);
