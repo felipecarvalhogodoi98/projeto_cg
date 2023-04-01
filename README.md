@@ -10,18 +10,18 @@
 - Ana Paula Piovesan Melchiori
 
 ## Requisitos do projeto
-- [ ] Quarto
+- [x] Quarto
   - [x] Parede, Chão, Teto
   - [x] Porta, Janela 
-- [ ] Objetos
-  - [ ] Cama, tapete, mesa, quadros, entre outros
-- [ ] Objetos dinamicos
-  - [ ] Usam algum tipo de animacão
-- [ ] Ambiente
-  - [ ] Iluminacão
-  - [ ] Animacão de objetos
+- [x] Objetos
+  - [x] Cama, tapete, mesa, quadros, entre outros
+- [x] Objetos dinamicos
+  - [x] Helice do ventilador
+- [x] Ambiente
+  - [x] Iluminacão
+  - [x] Animacão de objetos
 - [ ] Navegacão
-  - [ ] Mouse, teclado
+  - [x] Mouse, teclado
   - [ ] Colisão
   - [ ] Fisica(gravidade)
   - [ ] Selecão de objetos
